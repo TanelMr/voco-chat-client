@@ -1,0 +1,60 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: rgb(52,0,251);
+    background: linear-gradient(32deg, rgba(52,0,251,1) 37%, rgba(224,104,201,1) 88%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+h2 {
+    color:white;
+    margin-left: 2em;
+    margin-top: 1em;
+}
+
+.textBoxContainer {
+    width: 600px;
+    background: #211f1f;
+    border-radius: 10px;
+    height: 500px;
+    overflow: auto;
+}
+
+.messageBox {
+    background: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: auto;
+    padding: 5px;
+}
+.userNameandDate {
+    color: black;
+    font-size: x-small;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.inputContainer {
+    width: 600px;
+    height: 6em;
+    background: #211f1f;
+    border-radius: 10px;
+}
+
+.userNameInput {
+    width: 150px;
+    height:auto;
+}
+
+.userTextInput {
+    width: 200px;
+}
+
+
