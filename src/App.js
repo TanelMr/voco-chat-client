@@ -1,28 +1,33 @@
 import './App.css';
 import { useState } from "react";
 
-const DUMMY_DATA = [
+const initialData = [
   {
-    getUse: 'John Smith',
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore'
+    getUsername: 'Your username',
+    getMessage: 'Text you have written'
   }
 ]
 
 
 function App() {
 
-  const [messages, addMessage] = useState ('DUMMY_DATA')
+  const [messages, addMessage] = useState (initialData);
   const [getUsername, setUsername] = useState('');
   const [getMessage, setMessage] = useState('');
 
 
+  const current = new Date();
+  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}/${current.getDate()}`;
+
+  const today = new Date(),
+       time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+
   function insertMessage() {
     const newMessage = messages.concat({getUsername, getMessage});
     addMessage(newMessage);
+    document.getElementById('UserName').value = '';
+    document.getElementById('UserMessage').value = '';
 
-    /*
-        document.getElementById('message').value = '';
-    */
   }
 
   function textChange(event) {
@@ -39,12 +44,12 @@ function App() {
       return (
     <div className="messageBox">
 
-      <div className="messageText">
+      <div className="userMessageText">
         {message.getMessage}
       </div>
 
       <div className="userNameAndDate">
-        {message.getUsername}
+        {message.getUsername} * {date} {time}
       </div>
 
     </div>
@@ -52,17 +57,16 @@ function App() {
     })}
   </div>
 
-  <div className="container-fluid inputContainer">
+  <div className="container inputContainer">
 
     <div className="row">
-      <div className="col-3 ">
-        <textarea placeholder="Username" maxLength="20" id="Username"
+      <div className="col-3 border-right border-dark test">
+        <textarea placeholder="Username" maxLength="20" id="UserName"
                   onChange={textChange}
         />
       </div>
       <div className="col-9">
-        {/*test*/}
-        <textarea placeholder="Type your message..." maxLength="200" id={"Usermessage"}
+        <textarea placeholder="Type your message..." maxLength="200" id="UserMessage"
                   onChange={textChange}
         />
       </div>
