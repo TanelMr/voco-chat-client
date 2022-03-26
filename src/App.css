@@ -1,14 +1,10 @@
-* {
-    padding: 0;
-    margin: 0;
-}
-
-body {
+body, html {
     background: rgb(52,0,251);
     background: linear-gradient(32deg, rgba(52,0,251,1) 37%, rgba(224,104,201,1) 88%);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
+    overflow-y: hidden;
 }
 
 
