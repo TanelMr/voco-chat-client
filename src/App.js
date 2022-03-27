@@ -68,7 +68,7 @@ function App() {
         />
       </div>
       <div className="col-9">
-        <textarea placeholder="Type your message..." maxLength="200" id="UserMessage"
+        <textarea placeholder="Type your message..." maxLength="100" id="UserMessage"
                   onChange={textChange}
         />
       </div>
