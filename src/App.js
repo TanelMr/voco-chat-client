@@ -15,11 +15,14 @@ function App() {
   const [getMessage, setMessage] = useState('');
 
 
-  const current = new Date();
-  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}/${current.getDate()}`;
+  const currentDate = new Date();
+  const hours = String(currentDate.getHours()).padStart(2, '0');
+  const minutes = String(currentDate.getMinutes()).padStart(2, '0');
+  const seconds = String(currentDate.getSeconds()).padStart(2, '0');
 
-  const today = new Date(),
-       time = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+  const date = `${currentDate.getDate()}/${currentDate.getMonth()+1}/${currentDate.getFullYear()}`;
+
+
 
   function insertMessage() {
     const newMessage = messages.concat({getUsername, getMessage});
@@ -48,7 +51,7 @@ function App() {
       </div>
 
       <div className="userNameAndDate">
-        {message.getUsername} * {date} {time}
+        {message.getUsername} * {date} {hours}:{minutes}:{seconds}
       </div>
 
     </div>
