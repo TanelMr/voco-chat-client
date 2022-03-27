@@ -8,7 +8,6 @@ const initialData = [
   }
 ]
 
-
 function App() {
 
   const [messages, addMessage] = useState (initialData);
