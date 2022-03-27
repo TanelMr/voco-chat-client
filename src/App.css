@@ -26,6 +26,7 @@ h2 {
     border-radius: 0.3em;
     height: auto;
     padding: 5px;
+    word-wrap: break-word;
 }
 .userMessageText {
     color: whitesmoke;

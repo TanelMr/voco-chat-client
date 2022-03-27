@@ -33,8 +33,10 @@ function App() {
   }
 
   function textChange(event) {
-    setUsername(event.target.value);
     setMessage(event.target.value);
+  }
+  function userChange(event) {
+    setUsername(event.target.value);
   }
 
   return (
@@ -64,7 +66,7 @@ function App() {
     <div className="row">
       <div className="col-3 border-right border-dark test">
         <textarea placeholder="Username" maxLength="20" id="UserName"
-                  onChange={textChange}
+                  onChange={userChange}
         />
       </div>
       <div className="col-9">
