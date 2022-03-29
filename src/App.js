@@ -13,7 +13,12 @@ function App() {
   const [messages, addMessage] = useState (initialData);
   const [getUsername, setUsername] = useState('');
   const [getMessage, setMessage] = useState('');
+  const [getCharCount, setCharCount] = useState(0);
 
+
+  const clearState = () => {
+    setCharCount(0);
+  }
 
   const currentDate = new Date();
   const hours = String(currentDate.getHours()).padStart(2, '0');
@@ -22,19 +27,18 @@ function App() {
 
   const date = `${currentDate.getDate()}/${currentDate.getMonth()+1}/${currentDate.getFullYear()}`;
 
-
-
   function insertMessage() {
     const newMessage = messages.concat({getUsername, getMessage});
     addMessage(newMessage);
-    document.getElementById('UserName').value = '';
     document.getElementById('UserMessage').value = '';
-
+    clearState();
   }
 
   function textChange(event) {
     setMessage(event.target.value);
+    setCharCount(event.target.value.length)
   }
+
   function userChange(event) {
     setUsername(event.target.value);
   }
@@ -65,7 +69,7 @@ function App() {
 
     <div className="row">
       <div className="col-3 border-right border-dark test">
-        <textarea placeholder="Username" maxLength="20" id="UserName"
+        <textarea placeholder="Username" maxLength="20" id="UserName" value={getUsername}
                   onChange={userChange}
         />
       </div>
@@ -73,17 +77,15 @@ function App() {
         <textarea placeholder="Type your message..." maxLength="100" id="UserMessage"
                   onChange={textChange}
         />
+        <p className="charCount">{getCharCount}/100</p>
       </div>
     </div>
-
     <div className="row">
       <div className="col">
         <button type="button" id="button" className="button btn btn-dark" onClick={insertMessage}>Send</button>
       </div>
     </div>
   </div>
-
-
 </div>
   );
 }

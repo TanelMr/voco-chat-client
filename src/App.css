@@ -66,6 +66,11 @@ textarea {
 #button:hover {
     filter: brightness(80%);
 }
+.charCount {
+    position: absolute;
+    right: 1em;
+    bottom: -2em;
+}
 
 
 
